@@ -1,0 +1,19 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "back of web site/app mlh consulting",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohand-H/mlhconsulting.git"
+  },
+  "author": "Mohand H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mohand-H/mlhconsulting/issues"
+  },
+  "homepage": "https://github.com/Mohand-H/mlhconsulting#readme"
+}
