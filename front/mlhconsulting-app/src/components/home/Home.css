@@ -42,3 +42,18 @@
     font-size: 12px;
     padding:80px 0px 0px 0px;
   } 
+
+  .bg {
+    /* The image used */
+    background-image: url("/pictures/accueil.jpg");
+  
+    /* Half height */
+    height: 480px;
+   
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }

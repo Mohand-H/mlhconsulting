@@ -3,19 +3,25 @@ import { Link } from "react-router-dom"
 // import { Col, Container, Row, Footer } from "mdbreact"
 import { Jumbotron, Grid, Row, Col, Image, Button } from "react-bootstrap"
 import "./Home.css"
+// import Contact from "./contact/Contact"
 
 class Home extends Component {
   render() {
     return (
       <Grid>
-        <Jumbotron fluid>
-          <container>
-            <h2>MLH Consulting</h2>
+        <Row>
+        <Col xs={12} className="header">
+        <div class="bg">
+        <h2>MLH Consulting</h2>
             <p>Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
             <h2>Tests logiciels et qualité du SI</h2>
             <Button bsStyle="primary">Contactez-nous</Button>
-          </container>
-        </Jumbotron>
+        </div>
+        </Col>
+        </Row>
+        
+
+   
         <Row>
           <Col xs={12} md={6} className="image">
             <Image src="./pictures/accueil_equipe.jpg" classeName="home-equipe" responsive/>
@@ -54,12 +60,12 @@ class Home extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs={6} md={12} className="buttons">
           <h1>Qualité de votre SI, nous pouvons vous aider. vous chercher a</h1>
-          </Col>
-          <Col xs={6} md={12} className="buttons">
+          <Col xs={6} md={4} className="buttons">
             <a href="solutions" class="btn btn-primary btn-circle"><i class="fa fa-user"></i>AMELIORER VOS PRATIQUES DE TEST</a>
             <a href="solutions" class="btn btn-primary btn-circle"><i class="fa fa-user"></i>AUTOMATISER VOS TESTS</a>
+          </Col>
+          <Col xs={6} md={4} className="buttons">
             <a href="solutions" class="btn btn-primary btn-circle"><i class="fa fa-user"></i>EXTERNALISER VOS TESTS</a>
             <a href="solutions" class="btn btn-primary btn-circle"><i class="fa fa-user"></i>TESTER VOS APPLICATIONS DIGITALES</a>
           </Col>
@@ -71,11 +77,11 @@ class Home extends Component {
           <Col xs={12} md={6} className="equipe-expert">
             <div className="metier">
               <h1>Notre Métier Votre Carrière</h1>
-             
             </div>
           </Col>
         </Row>
       </Grid>
+     
     )
   }
 }

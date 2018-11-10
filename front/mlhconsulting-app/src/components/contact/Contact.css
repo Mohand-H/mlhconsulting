@@ -1,0 +1,25 @@
+.form-contact {
+
+
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 680px
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-control {
+
+    border: none;
+    border-bottom: 3px solid #3076A1;
+    margin-left: 40%;
+    width: 360px
+}
+
+.form-contact {
+    background-color: white;
+    background-image: url('/pictures/contact.jpg');
+    background-repeat: no-repeat;
+}
