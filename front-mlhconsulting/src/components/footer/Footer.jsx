@@ -7,7 +7,7 @@ class FooterPage extends Component {
     return (
       <Footer className="font-small pt-4 mt-4">
         
-          <Container fluid className="footer-copyright">
+          <Container fluid className="footer">
         
             &copy; {new Date().getFullYear()} Copyright:{" "}
             <a>MLH Consulting | </a>

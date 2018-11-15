@@ -12,7 +12,7 @@ class Home extends Component {
         <Row>
         <Col xs={12} className="header">
         <div class="bg">
-        <h2>MLH Consulting</h2>
+        <h1>MLH Consulting</h1>
             <p>Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
             <h2>Tests logiciels et qualité du SI</h2>
             <Button bsStyle="primary">Contactez-nous</Button>

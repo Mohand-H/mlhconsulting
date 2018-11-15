@@ -1,6 +1,8 @@
-import React, { Component } from "react"
-import { Form, FormGroup, Input, Label, Button } from "reactstrap"
-import "./Contact.css"
+import React, { Component } from "react";
+import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import "./Contact.css";
+import axios from 'axios'
+
 class Contact extends Component {
     constructor(){
         super()
@@ -12,32 +14,38 @@ class Contact extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value })
     }
 
+    async handleSubmit(event) {
+        event.preventDefault()
 
+        const { name, email, message } = this.state
 
-
+        const from = await axios.post('http://localhost:3001/form/contact',{
+            name,
+            email,
+            message    
+        })
+    }
 
   render() {
-
     return (
-        <Form className="form-contact">
+        <Form onSubmit={this.handleSubmit} className="form-contact">
           <h1>Contact</h1>
           <FormGroup>
-            <Label for="name"></Label>
             <Input
               type="text"
               name="name"
               placeholder="Nom"
-              onChange={this.handleChange}/>
+              onChange={this.handleChange} />
           </FormGroup>
 
           <FormGroup email>
-            <Label for="email"></Label>
             <Input type="email" 
             name="email" 
             placeholder="Email"
@@ -45,7 +53,6 @@ class Contact extends Component {
           </FormGroup>
 
           <FormGroup message>
-            <Label for="messag"></Label>
             <Input
               type="textarea"
               name="message"
@@ -55,13 +62,13 @@ class Contact extends Component {
 
           <FormGroup chek>
             <Input type="checkbox" name="check" id="exampleCheck" />
-            <Label for="Check" check>En soumettant ce formulaire j'accepte que les données saisies
+            <Label for="Check">En soumettant ce formulaire j'accepte que les données saisies
               soient exploitées pour permettre de me recontacter. Ces
               informations ne seront pas transmises à des tiers et à tout moment
               je pourrai demander la suppression des ces données.
             </Label>
           </FormGroup>
-          <Button className="btn-send">Envoyer</Button>
+          <Button bsStyle="primary">Submit</Button>
         </Form>
     )
   }

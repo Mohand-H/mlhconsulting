@@ -7,7 +7,7 @@ import Needs from "./components/needs/Needs";
 import Solutions from "./components/solutions/Solutions";
 import Contact from "./components/contact/Contact";
 import Candidat from "./components/candidat/Candidat";
-import Navbar from "./components/navbar/MenuBar";
+import MenuBar from "./components/menuBar/MenuBar";
 import FooterPage from "./components/footer/Footer"
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar />
+          <MenuBar />
           <Route exact path="/" component={Home} /> 
           <Route  path="/about" component={About} /> 
           <Route  path="/needs" component={Needs} /> 

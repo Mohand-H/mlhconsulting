@@ -1,10 +1,11 @@
 {
-  "name": "mlh consulting",
+  "name": "mlh-consulting",
   "version": "1.0.0",
   "description": "web site/app for mlh consulting",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "server": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,8 +16,10 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "nodemailer": "^4.6.8"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"

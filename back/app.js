@@ -1,24 +1,29 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const ShowHome = require('./routes/homePage/home.js');
-const ShowAboute = require('./routes/abouteUs/aboute.js');
-const ShowNeed = require('./routes/needs/need.js');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+// const ShowHome = require('./routes/homePage/home.js');
+// const ShowAboute = require('./routes/abouteUs/aboute.js');
+// const ShowNeed = require('./routes/needs/need.js');
 //const ShowSolution = require('./routes/solutions/resolv.js');
-const ShowContact = require('./routes/contactUs/contact.js');
+const SendForm = require('./routes/contactUs/contact.js');
 const app = express(); 
-const PORT = 5050
+
+const PORT = process.env.PORT | 3001
 
 /////////////////////Middleware/////////////////
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cors())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
 
 
 /////////////////////Routing////////////////////
-app.use('/page', ShowHome)
-app.use('/aboute', ShowAboute)
-app.use('/need', ShowNeed)
+// app.use('/page', ShowHome)
+// app.use('/aboute', ShowAboute)
+// app.use('/need', ShowNeed)
 //app.use('/solution', ShowSolution)
-app.use('/contact', ShowContact)
+app.use('/form', SendForm)
 
 
 /////////////////////Routes/////////////////////
