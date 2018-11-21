@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
-import "./Contact.css";
+import React, { Component } from "react"
+import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+import "./Contact.css"
 import axios from 'axios'
 
 class Contact extends Component {
@@ -75,3 +75,6 @@ class Contact extends Component {
 }
 
 export default Contact;
+
+
+

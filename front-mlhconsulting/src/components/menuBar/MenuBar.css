@@ -1,73 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 
-.container {
 
-  width: 100%;
-}
-
-.navbar-collapse.collapse {
-  height: 100%;
-}
-
-.navbar-default {
-  background-image: none;
-  border: none;
-  border-radius: 0;
-}
-
-.navbar-default .navbar-nav>li>a {
-  color: black;
-}
-
-.navbar-default .navbar-brand {
-  color: black;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: #0086C9;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #0086C9;
-}
-
-.navbar-default .navbar-toggle:focus,
-.navbar-default .navbar-toggle:hover {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-brand:focus,
-.navbar-default .navbar-brand:hover {
-  color: #0086C9;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav>li>a:focus,
-.navbar-default .navbar-nav>li>a:hover {
-  color: #0086C9;
-  background-color: transparent
-}
-
-.ligne-divider {
-  width: 100%;
-  height: 3px;
-  background: #0086C9;
-  margin: 0 auto;
-}
-
-.navbar-brand {
-  float: left;
-  height: 100px;
+.logo {
+  vertical-align: middle;
+  border-style: none;
   width: 150px;
-  padding: 15px 15px;
 }
+/* .Ripple.is-reppling {
+color: blue;
+} */
 
 
-.navbar-nav>li>a {
-    padding-top: 40px;
-    padding-bottom: 15px;
-    font-size:18px;
-}

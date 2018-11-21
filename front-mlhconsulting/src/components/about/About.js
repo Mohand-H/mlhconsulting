@@ -1,13 +1,13 @@
-import React, { Component } from "react"
-import { Jumbotron, Grid, Row, Col, Image, Button } from "react-bootstrap"
-import "./About.css"
+import React, { Component } from 'react'
+import { MDBContainer, MDBRow, MDBCol} from 'mdbreact'
+import './About.css'
 
 class About extends Component {
   render() {
     return (
-      <Grid>
-        <Row>
-        <Col xs={12} className="header">
+      <div className="container-fluid">
+        <MDBRow>
+        <MDBCol size='12' sm='12' className='header'>
           <h1>Notre vision et nos valeurs </h1>
           <h3>L’industrialisation du test logiciel : clé de la maîtrise des risque IT</h3>
           <p>Dans l’ère de la globalisation de l’économie, la révolution
@@ -23,13 +23,13 @@ class About extends Component {
             activités, un nouveau métier et une nouvelle industrie du test
             logiciel sont en train d’émerger.
           </p>
-        </Col>
-        </Row>
-        <Row>
-          <Col xs={12} md={6} className="image">
-           <img src="./pictures/quisommesnous_nosequipes.jpg" class="rounded float-left" alt="..."/>
-           </Col>
-           <Col xs={12} md={6} className="text-equipe">
+        </MDBCol>
+        </MDBRow>
+        <MDBRow>
+          <MDBCol size='12' sm='6' className='image'>
+           <img src='./pictures/quisommesnous_nosequipes.jpg' className='rounded float-left' alt='...'/>
+           </MDBCol>
+           <MDBCol size='12' sm='6' className='text-equipe'>
            <h1>Nos équipes sont spécialistes en test logiciel </h1>
             <p>
               A travers nos équipes, bénéficiez des meilleures méthodes de test
@@ -39,10 +39,10 @@ class About extends Component {
               systèmes d’information, les équipes de MLH Consulting sont dotées
               de compétences polyvalentes :
             </p>
-           </Col>
-         </Row>
-         <Row>
-        <Col xs={12} className="header">
+           </MDBCol>
+         </MDBRow>
+         <MDBRow>
+        <MDBCol size='12' sm='12' className='header'>
           <h1>Nos partenaires </h1>
           <h3>Un partenariat solide et durable:</h3>
             <p>
@@ -55,10 +55,9 @@ class About extends Component {
               depuis 1995, Dalisys facilite le déploiement des outils HP ALM par
               ses propres innovations
             </p>
-            </Col>
-         </Row>
-
-      </Grid>
+            </MDBCol>
+         </MDBRow>
+         </div>
     )
   }
 }

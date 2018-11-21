@@ -1,31 +1,37 @@
 import React, { Component } from "react"
 import "./App.css";
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css'; 
+import 'mdbreact/dist/css/mdb.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from "./components/home/Home";
+import HomePage from "./components/home/HomePage";
 import About from "./components/about/About";
 import Needs from "./components/needs/Needs";
 import Solutions from "./components/solutions/Solutions";
-import Contact from "./components/contact/Contact";
+import FormsPage from "./components/contact/FormsPage";
 import Candidat from "./components/candidat/Candidat";
 import MenuBar from "./components/menuBar/MenuBar";
-import FooterPage from "./components/footer/Footer"
+import FooterBar from "./components/footer/FooterBar"
+
+
 
 class App extends Component {
   render() {
     return (
+      
       <Router>
-        <div>
+        <div className='app'>
           <MenuBar />
-          <Route exact path="/" component={Home} /> 
+          <Route exact path="/" component={HomePage} /> 
           <Route  path="/about" component={About} /> 
           <Route  path="/needs" component={Needs} /> 
           <Route  path="/solutions" component={Solutions} />
-          <Route  path="/contact" component={Contact} />
+          <Route  path="/contact" component={FormsPage} />
           <Route  path="/candidat" component={Candidat} />
-          <FooterPage />
+          <FooterBar />
         </div>
       </Router>
-    );
+    )
   }
 }
 
