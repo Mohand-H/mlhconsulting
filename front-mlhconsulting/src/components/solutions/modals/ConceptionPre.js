@@ -1,43 +1,39 @@
-import React, {Component} from 'react';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-
+import React, { Component } from 'react';
+import { Button, Collapse } from 'mdbreact';
 
 class ConceptionPre extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.toggle = this.toggle.bind(this);
 
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
+        this.state = {
+            collapse: false,
+        };
+    }
 
-  render() {
-    return (
-      <Container>
-        <Button block size="lg" color="primary" onClick={this.toggle}>Conception et préparation des tests</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Conception et préparation des tests</ModalHeader>
-          <ModalBody>
-              <ul>
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
+    }
+
+    render() {
+        return (
+            <di>
+                <div>
+                    <Button block size="lg" gradient="blue" onClick={this.toggle} style={{ marginBottom: "1rem" }}>Conception et préparation des tests</Button>
+                    <Collapse isOpen={this.state.collapse}>
+                    <ul>
                   <li>Cas de Tests</li>
                   <li>Scénarios</li>
                   <li>Jeux de données</li>
                   <li>Campagnes de tests</li>
                   <li>Le suivi de la couverture des exigences avec mises à jour du référentiel</li>
               </ul>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Close</Button>{' '}
-          </ModalFooter>
-        </Modal>
-      </Container>
-    );
-  }
+                    </Collapse>
+                </div>
+            </di>
+
+        );
+    }
 }
 
-export default ConceptionPre  
+export default ConceptionPre 

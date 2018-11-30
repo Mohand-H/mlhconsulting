@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 // const ShowAboute = require('./routes/abouteUs/aboute.js');
 // const ShowNeed = require('./routes/needs/need.js');
 //const ShowSolution = require('./routes/solutions/resolv.js');
-const SendForm = require('./routes/contactUs/contact.js');
+const SendForm = require('./routes/contactUs/Form.js');
 const app = express(); 
 
 const PORT = process.env.PORT | 3001
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // app.use('/aboute', ShowAboute)
 // app.use('/need', ShowNeed)
 //app.use('/solution', ShowSolution)
-app.use('/form', SendForm)
+app.use('/contact', SendForm)
 
 
 /////////////////////Routes/////////////////////

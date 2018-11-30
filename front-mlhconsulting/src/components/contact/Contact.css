@@ -1,23 +1,12 @@
-.form-contact {
-    margin-bottom: 0;
-    margin-top: 0;
-    height: 680px
+.col-6{
+    margin-top: 30px;
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-left: 700px;
 }
-
-h1 {
-    text-align: center;
+.h3{
+color: grey;
 }
-
-.form-control {
-
-    border: none;
-    border-bottom: 3px solid #3076A1;
-    margin-left: 40%;
-    width: 360px
-}
-
-.form-contact {
-    background-color: white;
-    background-image: url('/pictures/contact.jpg');
-    background-repeat: no-repeat;
+.view{
+    margin-top: 10px;
 }

@@ -1,30 +1,27 @@
-
-import React, {Component} from 'react';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-
+import React, { Component } from 'react'
+import { Button, Collapse } from 'mdbreact'
 
 class GestionDesAnomalies extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.toggle = this.toggle.bind(this);
 
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
+        this.state = {
+            collapse: false,
+        };
+    }
 
-  render() {
-    return (
-      <Container>
-        <Button block size="lg" color="primary" onClick={this.toggle}>La Gestion des anomalies</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>La Gestion des anomalies</ModalHeader>
-          <ModalBody>
-              <ul>
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
+    }
+
+    render() {
+        return (
+            <di>
+                <div>
+                    <Button block size="lg" gradient="blue"  onClick={this.toggle} style={{ marginBottom: "1rem" }}>La Gestion des anomalies</Button>
+                    <Collapse isOpen={this.state.collapse}>
+                    <ul>
                   <li>Référencer toutes les anomalies selon les différentes phases de tests</li>
                   <li>Référencer toutes les anomalies selon les différentes phases de tests</li>
                   <p>- De saisir de nouvelles anomalies ou évolutions</p>
@@ -36,14 +33,12 @@ class GestionDesAnomalies extends Component {
                   <li>Suppression des doublons</li>
                   <li>Recherche de la relation (corrélation) entre anomalies</li>
               </ul>   
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Close</Button>{' '}
-          </ModalFooter>
-        </Modal>
-      </Container>
-    );
-  }
+                    </Collapse>
+                </div>
+            </di>
+
+        );
+    }
 }
 
-export default GestionDesAnomalies  
+export default GestionDesAnomalies

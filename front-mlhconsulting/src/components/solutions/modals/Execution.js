@@ -1,29 +1,26 @@
-import React, { Component } from 'react';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-import './Modal.css'
-
+import React, { Component } from 'react'
+import { Button, Collapse } from 'mdbreact'
 
 class Execution extends Component {
     constructor(props) {
         super(props);
+        this.toggle = this.toggle.bind(this);
+
         this.state = {
-            modal: false
+            collapse: false,
         };
     }
 
-    toggle = () => {
-        this.setState({
-            modal: !this.state.modal
-        });
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
     }
 
     render() {
         return (
-            <Container>
-                <Button block size="lg" color="primary" onClick={this.toggle}>Exécution des campagnes de tests SQLI</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>Exécution des campagnes de tests SQLI</ModalHeader>
-                    <ModalBody>
+            <di>
+                <div>
+                    <Button block size="lg" gradient="blue" onClick={this.toggle} style={{ marginBottom: "1rem" }}>Exécution des campagnes de tests SQLI</Button>
+                    <Collapse isOpen={this.state.collapse}>
                         <p>Création des campagnes en associant tous les scénarios permettant une couverture des exigences, comme défini dans la stratégie de tests</p>
                         <p>Au cours de l’exécution, à tout moment avoir des indicateurs permettant de connaître</p>
                         <p>- Les scénarios exécutés / scénarios prévus</p>
@@ -33,14 +30,12 @@ class Execution extends Component {
                             <br></br>Par campagne
                         </p>
                         <p>- Par scénarios</p>
-                        <img src='./pictures/execution.png' />
-                       
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Close</Button>{' '}
-                    </ModalFooter>
-                </Modal>
-            </Container>
+                        <img src='./pictures/execution.png' alt='schema' />
+
+                    </Collapse>
+                </div>
+            </di>
+
         );
     }
 }

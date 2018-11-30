@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { MDBContainer, MDBRow, MDBCol} from 'mdbreact'
+import { MDBContainer, MDBRow, MDBCol, View, Mask} from 'mdbreact'
 import './About.css'
 
 class About extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <MDBRow>
-        <MDBCol size='12' sm='12' className='header'>
+
+        <MDBRow className="section-1">
+        <MDBCol size='12' sm='12'>
           <h1>Notre vision et nos valeurs </h1>
           <h3>L’industrialisation du test logiciel : clé de la maîtrise des risque IT</h3>
           <p>Dans l’ère de la globalisation de l’économie, la révolution
@@ -25,23 +26,27 @@ class About extends Component {
           </p>
         </MDBCol>
         </MDBRow>
-        <MDBRow>
-          <MDBCol size='12' sm='6' className='image'>
-           <img src='./pictures/quisommesnous_nosequipes.jpg' className='rounded float-left' alt='...'/>
+
+        <MDBRow className="section-2">
+          <MDBCol size='12' sm='6'>
+          <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+           <img className='img-fluid' src='./pictures/quisommesnous_nosequipes.jpg' alt='Responsive image'/>
+           <a><Mask overlay="white-slight"/></a>
+            </View>
            </MDBCol>
+
            <MDBCol size='12' sm='6' className='text-equipe'>
            <h1>Nos équipes sont spécialistes en test logiciel </h1>
-            <p>
-              A travers nos équipes, bénéficiez des meilleures méthodes de test
+            <p>A travers nos équipes, bénéficiez des meilleures méthodes de test
               et outils de test pour définir votre stratégie, construire votre
               patrimoine et vos campagnes de tests logiciels. Professionnels
               passionnés par la qualité logicielle et experts en test des
               systèmes d’information, les équipes de MLH Consulting sont dotées
-              de compétences polyvalentes :
-            </p>
+              de compétences polyvalentes :</p>
            </MDBCol>
          </MDBRow>
-         <MDBRow>
+
+         <MDBRow className="section-2">
         <MDBCol size='12' sm='12' className='header'>
           <h1>Nos partenaires </h1>
           <h3>Un partenariat solide et durable:</h3>

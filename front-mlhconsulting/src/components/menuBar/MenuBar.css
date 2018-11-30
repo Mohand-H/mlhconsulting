@@ -1,12 +1,19 @@
-
-
-.logo {
-  vertical-align: middle;
-  border-style: none;
-  width: 150px;
+.navbar-dark .navbar-nav .nav-link {
+    padding: 35px;
 }
-/* .Ripple.is-reppling {
-color: blue;
-} */
 
+.navbar-toggler {
+    background-color:#0086C9; 
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    border: 1px solid ;
+    color:red;
+    border-radius: .25rem;
+  
+}
+/* .Ripple.is-reppling{
+    background-color:#0086C9; 
+
+} */
 

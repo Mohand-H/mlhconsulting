@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { MDBRow, img, Button, MDBContainer, MDBCol } from "mdbreact"
+import { MDBRow, img, Button, MDBContainer, MDBCol, Mask, View } from "mdbreact"
 
 import "./Home.css"
 
@@ -8,39 +8,39 @@ import "./Home.css"
 class HomePage extends Component {
   render() {
     return (
-
-
-      <div className="container-fluid">
-
-        <MDBRow>
-          <MDBCol className="image-bg">
-            <h1 className='header'>MLH Consulting</h1>
-            <p className='header'> Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
-            <h2 className='header'>Tests logiciels et qualité du SI</h2>
-            <Button href='contact' color="primary" className='btn-contact' rounded>Contactez-nous</Button>
+     
+      <div>
+        <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+          <img className='img-fluid' src='./pictures/accueil.jpg' alt='Responsive image' />
+          <a><Mask overlay="white-slight" /></a>
+          <Mask overlay="black-strong" style={{ flexDirection: 'column', height: '100vh' }} className="flex-center ">
+            <h1 className="white-text">MLH Consulting</h1>
+            <p className="white-text"> Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
+            <h2 className="white-text">Tests logiciels et qualité du SI</h2>
+            <Button href='contact' gradient="blue"  className='btn-contact'>Contactez-nous</Button>
+          </Mask>
+        </View>
+      
+      
+        <MDBRow className="section-1">
+          <MDBCol size='12' sm='6' >
+            <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+              <img className='img-fluid'src='img-fluid' src="./pictures/accueil_equipe.jpg" alt="Responsive image" />
+              <a><Mask overlay="white-slight" /></a>
+            </View>
           </MDBCol>
-        </MDBRow>
-
-        <MDBRow>
-          <MDBCol size='12' sm='6' className="image">
-            <div className='image-expert'>
-              <img src="./pictures/accueil_equipe.jpg" classeName="home-equipe" alt="Responsive image" respensive />
-            </div>
-          </MDBCol>
-          <MDBCol size='12' sm='6' className="equipe-expert">
-            <div className="expert">
-              <h1>Une équipe d'experts en test</h1>
+          <MDBCol size='12' sm='6' >
+            <div className="equipe-expert">
+              <h1 >Une équipe d'experts en test</h1>
               <p>Des professionnels passionnés une haute compétence technique, en permanence à l’écoute de leurs clients</p>
             </div>
           </MDBCol>
         </MDBRow>
 
-
-        <MDBRow>
+        <MDBRow className="section-2">
           <MDBCol size='12' sm='6'>
-            <h1>Nos atouts</h1>
             <div className="atous">
-
+              <h1 className="font-weight mb-3 p-0">Nos atouts</h1>
               <ul className="itmes-atous">
                 <li>Réponse pertinente et complète aux besoins en matière de test logiciel</li>
                 <li>Indépendance et objectivité d’une société « pure player »</li>
@@ -59,26 +59,29 @@ class HomePage extends Component {
               </ul>
             </div>
           </MDBCol>
-          <MDBCol size='6' sm='6'>
-            <div className='atous'>
-              <img src="./pictures/accueil_nosatous.jpg" className="atous-image" />
-            </div>
+          <MDBCol size='12' sm='6'>
+            <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+              <img className='img-fluid' src="./pictures/accueil_nosatous.jpg" alt="Responsive image" />
+              <a><Mask overlay="white-slight" /></a>
+            </View>
           </MDBCol>
         </MDBRow>
 
-        <MDBRow>
+        <MDBRow className="section-3">
           <MDBCol>
-            <h1 className='qualite'>Qualité de votre SI, nous pouvons vous aider. vous chercher a</h1>
-            <div>
-              <Button href="solutions" color="primary" className="btn btn-needs">AMELIORER <br></br>VOS PRATIQUES DE TEST</Button>
-              <Button href="solutions" color="primary" className="btn btn-needs">AUTOMATISER<br></br> VOS TESTS</Button >
-              <Button href="solutions" color="primary" className="btn btn-needs">EXTERNALISER <br></br>VOS TESTS</Button >
-              <Button href="solutions" color="primary" className="btn  btn-needs">TESTER <br></br>VOS APPLICATIONS DIGITALES</Button >
+            <div className='qualite'>
+              <h1>Qualité de votre SI, nous pouvons vous aider. vous chercher a</h1>
+              <Button href="solutions" gradient="blue" className="btn btn-needs z-depth-5">MELIORER VOS PRATIQUES DE TEST</Button>
+              <Button href="solutions" gradient="blue"  className="btn btn-needs z-depth-5">AUTOMATISER VOS TESTS</Button >
+              <Button href="solutions" gradient="blue"  className="btn btn-needs z-depth-5">EXTERNALISER VOS TESTS</Button >
+              <Button href="solutions" gradient="blue"  className="btn  btn-needs z-depth-5">TESTER VOS APPLICATIONS DIGITALES</Button >
             </div>
           </MDBCol>
         </MDBRow>
 
-        <MDBRow>
+        
+
+        {/* <MDBRow>
           <MDBCol >
             <div className="metier">
               <img src="./pictures/accueil_equipe.jpg" class='equipe' />
@@ -87,10 +90,9 @@ class HomePage extends Component {
           <MDBCol className="equipe-expert">
             <h1>Notre Métier Votre Carrière</h1>
           </MDBCol>
-        </MDBRow>
-      </div>
-
-
+        </MDBRow> */}
+        </div>
+     
     )
   }
 }

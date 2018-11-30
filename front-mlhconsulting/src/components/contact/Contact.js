@@ -1,78 +1,148 @@
 import React, { Component } from "react"
-import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+
+import { MDBContainer, MDBRow, MDBCol, Input, Button, View, Mask, Fa } from 'mdbreact'
 import "./Contact.css"
 import axios from 'axios'
 
 class Contact extends Component {
-    constructor(){
-        super()
+  constructor() {
+    super()
 
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
-
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {
+      name: '',
+      email: '',
+      subject:'',
+      text: ''
     }
+  }
+    
 
-    handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value })
-    }
 
-    async handleSubmit(event) {
-        event.preventDefault()
+  change (e){
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
 
-        const { name, email, message } = this.state
+  onSubmit (e) {
+    e.preventDefault()
+    // console.log(this.state)
+  const name = this.state.name
+  const email = this.state.email
+  const subject = this.state.subject
+  const text = this.state.message
 
-        const from = await axios.post('http://localhost:3001/form/contact',{
-            name,
-            email,
-            message    
-        })
-    }
+  this.setState({
+    loading:true
+  })
+
+  const data={
+    name,
+    email,
+    subject,
+    text
+  }
+    axios.post('http://localhost:3001/contact/Form', data)
+    .then(response => {
+      console.log(response);
+      this.setSet({
+        loading: false,
+        message: response.data
+      })
+    })
+    .catch(err=>{
+      console.log(err);
+      this.state({
+        loading:false
+      })
+    })
+  }
+  // loadOrShowMsg(){
+  //   if(this.state.loading){
+  //     return <p>Loading...</p>
+  //   }else{
+  //     return<p>{this.state.message}<p>
+  //   }
+  // }
+  
 
   render() {
     return (
-        <Form onSubmit={this.handleSubmit} className="form-contact">
-          <h1>Contact</h1>
-          <FormGroup>
-            <Input
-              type="text"
-              name="name"
-              placeholder="Nom"
-              onChange={this.handleChange} />
-          </FormGroup>
+    <div className="#">
+      <MDBRow>
+        <MDBCol size='12' className='formulair'>
+          <View className="" >
+          <img className='img-fluid' src='./pictures/contact.jpg' alt='Responsive image' responsive/>
+          <Mask>
+          <MDBRow around>
+        <MDBCol size='6'>
+            <form className='form-contact' onSubmit={this.onSubmit.bind(this)}> 
+              <h1>Contact</h1>
+              <div className="grey-text">
+               <Input 
+                name='name'
+                label="Votre nom" 
+                icon="user" 
+                group type="text" 
+                validate error="wrong" 
+                success="right" 
+                value={this.state.name} 
+                onChange={this.change.bind(this)}
+                />
 
-          <FormGroup email>
-            <Input type="email" 
-            name="email" 
-            placeholder="Email"
-            onChange={this.handleChange} />
-          </FormGroup>
+                  <Input 
+                    name='email'
+                    label="Votre email" 
+                    icon="envelope" 
+                    group type="email" 
+                    validate error="wrong" 
+                    success="right"  
+                    value={this.state.email} 
+                    onChange={this.change.bind(this)}
+                    />
 
-          <FormGroup message>
-            <Input
-              type="textarea"
-              name="message"
-              placeholder="Message..."
-              onChange={this.handleChange}/>
-          </FormGroup>
+                    <Input 
+                    name='subject'
+                    label="Sujet" 
+                    icon="tag" 
+                    group type="text" 
+                    validate error="wrong" 
+                    success="right"  
+                    value={this.state.subject} 
+                    onChange={this.change.bind(this)}
+                    />
 
-          <FormGroup chek>
-            <Input type="checkbox" name="check" id="exampleCheck" />
-            <Label for="Check">En soumettant ce formulaire j'accepte que les données saisies
-              soient exploitées pour permettre de me recontacter. Ces
-              informations ne seront pas transmises à des tiers et à tout moment
-              je pourrai demander la suppression des ces données.
-            </Label>
-          </FormGroup>
-          <Button bsStyle="primary">Submit</Button>
-        </Form>
+                    <Input 
+                    name='message'
+                    type="textarea" 
+                    rows="2" 
+                    label="Votre message" 
+                    icon="pencil"  
+                    value={this.state.message} 
+                    onChange={this.change.bind(this)}
+                    />
+                  </div>
+
+                  <div className="text-center">
+                    <Button outline gradient="blue" type='submit' value="Reset">Envoyer<Fa icon="paper-plane-o" className="Envoyer" /></Button>
+                  </div>
+                </form>
+                {/* {this.loadOrShowMsg()} */}
+                </MDBCol>
+                  </MDBRow>
+                </Mask>
+                </View>
+              </MDBCol>
+            </MDBRow>
+       
+       
+     
+ </div>
     )
   }
 }
+
+
 
 export default Contact;
 

@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
-import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
-
+import { Button, Collapse } from 'mdbreact';
 
 class Grilles extends Component {
     constructor(props) {
         super(props);
+        this.toggle = this.toggle.bind(this);
+
         this.state = {
-            modal: false
+            collapse: false,
         };
     }
 
-    toggle = () => {
-        this.setState({
-            modal: !this.state.modal
-        });
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
     }
 
     render() {
         return (
-            <Container>
-                <Button block size="lg" color="primary" onClick={this.toggle}>Grille d’effort de tests</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                    <ModalHeader toggle={this.toggle}>Grille d’effort de tests</ModalHeader>
-                    <ModalBody>
+            <di>
+                <div>
+                    <Button block size="lg" gradient="blue" onClick={this.toggle} style={{ marginBottom: "1rem" }}>Grille d’effort de test</Button>
+                    <Collapse isOpen={this.state.collapse}>
                         <p>La grille d'effort de test permet de choisir et définir les différentes techniques de test à mettre en place sur le projet :</p>
                         <p>Par exemple :</p>
                         <p> Des tests unitaires, manuels ou automatisés</p>
@@ -40,12 +38,10 @@ class Grilles extends Component {
                             <li>Complexité technique de la fonctionnalité</li>
                             <li>Fonctionnalité métier critique</li>
                         </ul>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Close</Button>{' '}
-                    </ModalFooter>
-                </Modal>
-            </Container>
+                    </Collapse>
+                </div>
+            </di>
+
         );
     }
 }
