@@ -1,15 +1,14 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const nodemailer = require('nodemailer');
-// const ShowHome = require('./routes/homePage/home.js');
-// const ShowAboute = require('./routes/abouteUs/aboute.js');
-// const ShowNeed = require('./routes/needs/need.js');
-//const ShowSolution = require('./routes/solutions/resolv.js');
-const SendForm = require('./routes/contactUs/Form.js');
-const app = express(); 
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const connection = require('./helpers/connect.js')
+const Auth = require('./routes/auth/Login.js')
+// const Register = require('./routes/auth/Signup.js')
+const ShowProfiles = require('./routes/admin/Admin.js')
+const SendForm = require('./routes/contactUs/Form.js')
+const app = express();
 
-const PORT = process.env.PORT | 3001
+const PORT = process.env.PORT || 3001
 
 /////////////////////Middleware/////////////////
 app.use(cors())
@@ -19,16 +18,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 /////////////////////Routing////////////////////
-// app.use('/page', ShowHome)
-// app.use('/aboute', ShowAboute)
-// app.use('/need', ShowNeed)
-//app.use('/solution', ShowSolution)
+
+app.use('/auth', Auth)
+// app.use('/auth', Register)
 app.use('/contact', SendForm)
+app.use('/admin', ShowProfiles)
 
 
 /////////////////////Routes/////////////////////
-app.get('/',(req, res)=>{
-    res.send('Projet Mlh Consulting')
+app.get('/', (req, res) => {
+    res.send(`<h1>Projet Mlh Consulting</h1>`)
 })
 
 //////////////////////port server///////////////

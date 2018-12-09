@@ -10,16 +10,15 @@ import Needs from "./components/needs/Needs"
 import Solutions from "./components/solutions/Solutions"
 // import FormsPage from "./components/contact/FormsPage"
 import Contact from "./components/contact/Contact"
-import Candidat from "./components/candidat/Candidat"
 import MenuBar from "./components/menuBar/MenuBar"
 import FooterBar from "./components/footer/FooterBar"
+import Login from "./components/candidat/login"
+import Register from "./components/candidat/register"
+import Space from "./components/candidat/space"
 
 
 
 class App extends Component {
-
-
-
 
 
   render() {
@@ -33,9 +32,12 @@ class App extends Component {
           <Route  path="/needs" component={Needs} /> 
           <Route  path="/solutions" component={Solutions} />
           <Route  path="/contact" component={Contact}/>
-          <Route  path="/candidat" component={Login} />
+          <Route  path="/login" component={Login} />
+          <Route  path="/signup" component={Register} /> 
+          <Route  path="/space" component={Space} /> 
           <FooterBar />
         </div>
+       
       </Router>
     )
   }

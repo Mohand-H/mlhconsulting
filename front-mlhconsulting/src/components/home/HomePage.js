@@ -1,47 +1,44 @@
-import React, { Component } from "react"
-import { MDBRow, img, Button, MDBContainer, MDBCol, Mask, View } from "mdbreact"
-
-import "./Home.css"
-
+import React, { Component } from 'react'
+import { MDBRow, Button, MDBCol, Mask, View } from 'mdbreact'
+import './Home.css'
 
 
 class HomePage extends Component {
   render() {
     return (
-     
+
       <div>
-        <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
-          <img className='img-fluid' src='./pictures/accueil.jpg' alt='Responsive image' />
-          <a><Mask overlay="white-slight" /></a>
-          <Mask overlay="black-strong" style={{ flexDirection: 'column', height: '100vh' }} className="flex-center ">
-            <h1 className="white-text">MLH Consulting</h1>
-            <p className="white-text"> Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
-            <h2 className="white-text">Tests logiciels et qualité du SI</h2>
-            <Button href='contact' gradient="blue"  className='btn-contact'>Contactez-nous</Button>
+        <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
+          <img className='img-fluid' src='./pictures/accueil.jpg' alt='img-responsive' />
+          <Mask overlay='white-slight' />
+          <Mask overlay='black-strong' style={{ flexDirection: 'column', height: '100vh' }} className='flex-center '>
+            <h1 className='white-text'>MLH Consulting</h1>
+            <p className='white-text'> Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
+            <h2 className='white-text'>Tests logiciels et qualité du SI</h2>
+            <Button href='./contact' gradient='blue' className='btn-contact'>Contactez-nous</Button>
           </Mask>
         </View>
-      
-      
-        <MDBRow className="section-1">
+
+        <MDBRow className='section-1'>
           <MDBCol size='12' sm='6' >
-            <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
-              <img className='img-fluid'src='img-fluid' src="./pictures/accueil_equipe.jpg" alt="Responsive image" />
-              <a><Mask overlay="white-slight" /></a>
+            <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
+              <img className='img-fluid' src='./pictures/accueil_equipe.jpg' alt='img-responsive' />
+              <Mask overlay='white-slight' />
             </View>
           </MDBCol>
           <MDBCol size='12' sm='6' >
-            <div className="equipe-expert">
+            <div className='equipe-expert'>
               <h1 >Une équipe d'experts en test</h1>
               <p>Des professionnels passionnés une haute compétence technique, en permanence à l’écoute de leurs clients</p>
             </div>
           </MDBCol>
         </MDBRow>
 
-        <MDBRow className="section-2">
+        <MDBRow className='section-2'>
           <MDBCol size='12' sm='6'>
-            <div className="atous">
-              <h1 className="font-weight mb-3 p-0">Nos atouts</h1>
-              <ul className="itmes-atous">
+            <div className='atous'>
+              <h1 className='font-weight mb-3 p-0'>Nos atouts</h1>
+              <ul className='itmes-atous'>
                 <li>Réponse pertinente et complète aux besoins en matière de test logiciel</li>
                 <li>Indépendance et objectivité d’une société « pure player »</li>
                 <li>Professionnels du test très motivés</li>
@@ -60,39 +57,25 @@ class HomePage extends Component {
             </div>
           </MDBCol>
           <MDBCol size='12' sm='6'>
-            <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
-              <img className='img-fluid' src="./pictures/accueil_nosatous.jpg" alt="Responsive image" />
-              <a><Mask overlay="white-slight" /></a>
+            <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
+              <img className='img-fluid' src='./pictures/accueil_nosatous.jpg' alt='img-responsive' />
+              <Mask overlay='white-slight' />
             </View>
           </MDBCol>
         </MDBRow>
 
-        <MDBRow className="section-3">
+        <MDBRow className='section-3'>
           <MDBCol>
             <div className='qualite'>
               <h1>Qualité de votre SI, nous pouvons vous aider. vous chercher a</h1>
-              <Button href="solutions" gradient="blue" className="btn btn-needs z-depth-5">MELIORER VOS PRATIQUES DE TEST</Button>
-              <Button href="solutions" gradient="blue"  className="btn btn-needs z-depth-5">AUTOMATISER VOS TESTS</Button >
-              <Button href="solutions" gradient="blue"  className="btn btn-needs z-depth-5">EXTERNALISER VOS TESTS</Button >
-              <Button href="solutions" gradient="blue"  className="btn  btn-needs z-depth-5">TESTER VOS APPLICATIONS DIGITALES</Button >
+              <Button href='solution' gradient='blue' className='btn btn-needs z-depth-5'>MELIORER VOS PRATIQUES DE TEST</Button>
+              <Button href='solution' gradient='blue' className='btn btn-needs z-depth-5'>AUTOMATISER VOS TESTS</Button >
+              <Button href='solution' gradient='blue' className='btn btn-needs z-depth-5'>EXTERNALISER VOS TESTS</Button >
+              <Button href='solution' gradient='blue' className='btn btn-needs z-depth-5'>TESTER VOS APPLICATIONS DIGITALES</Button >
             </div>
           </MDBCol>
         </MDBRow>
-
-        
-
-        {/* <MDBRow>
-          <MDBCol >
-            <div className="metier">
-              <img src="./pictures/accueil_equipe.jpg" class='equipe' />
-            </div>
-          </MDBCol>
-          <MDBCol className="equipe-expert">
-            <h1>Notre Métier Votre Carrière</h1>
-          </MDBCol>
-        </MDBRow> */}
-        </div>
-     
+      </div>
     )
   }
 }

@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import { Button, Collapse } from 'mdbreact';
+import React, { Component } from 'react'
+import { Button, Collapse } from 'mdbreact'
 
 class LesExigences extends Component {
   constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
+    super(props)
+    this.toggle = this.toggle.bind(this)
 
     this.state = {
       collapse: false,
-    };
+    }
   }
 
   toggle() {
-    this.setState({ collapse: !this.state.collapse });
+    this.setState({ collapse: !this.state.collapse })
   }
 
   render() {
     return (
       <di>
         <div>
-          <Button block size="lg" gradient="blue" onClick={this.toggle} style={{ marginBottom: "1rem" }}>Les exigences</Button>
+          <Button block size='lg' gradient='blue' onClick={this.toggle} style={{ marginBottom: '1rem' }}>Les exigences</Button>
           <Collapse isOpen={this.state.collapse}>
             <ul>
               <li> Le référentiel des exigences permet de collecter et piloter l'ensemble des exigences explicites et implicites d’une application ou d’un ensemble d’applications, tant d'un point de vue fonctionnel que technique.</li>
@@ -32,8 +32,7 @@ class LesExigences extends Component {
           </Collapse>
         </div>
       </di>
-
-    );
+    )
   }
 }
 
