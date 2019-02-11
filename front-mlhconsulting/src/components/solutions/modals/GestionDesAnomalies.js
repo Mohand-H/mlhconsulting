@@ -23,7 +23,6 @@ class GestionDesAnomalies extends Component {
                     <Collapse isOpen={this.state.collapse}>
                     <ul>
                   <li>Référencer toutes les anomalies selon les différentes phases de tests</li>
-                  <li>Référencer toutes les anomalies selon les différentes phases de tests</li>
                   <p>- De saisir de nouvelles anomalies ou évolutions</p>
                   <p>- De qualifier les dysfonctionnements remontés</p>
                   <p>- De suivre l’évolution de la fiche : en cours d’analyse, en cours de correction…</p>

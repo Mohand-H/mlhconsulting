@@ -1,11 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const connection = require('./helpers/connect.js')
-const Auth = require('./routes/auth/Login.js')
-// const Register = require('./routes/auth/Signup.js')
-const ShowProfiles = require('./routes/admin/Admin.js')
-const SendForm = require('./routes/contactUs/Form.js')
+const SendForm = require('./routes/contactUs/form.js')
+const Auth = require('./routes/auth/login.js')
+const MySpace = require('./routes/candidat/nominee.js')
+const ShowProfiles = require('./routes/admin/admin.js')
+
 const app = express();
 
 const PORT = process.env.PORT || 3001
@@ -18,10 +18,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 /////////////////////Routing////////////////////
-
-app.use('/auth', Auth)
-// app.use('/auth', Register)
 app.use('/contact', SendForm)
+app.use('/auth', Auth)
+app.use('/espace', MySpace)
 app.use('/admin', ShowProfiles)
 
 

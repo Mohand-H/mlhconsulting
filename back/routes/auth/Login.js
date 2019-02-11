@@ -11,25 +11,27 @@ const jwt = require ('jsonwebtoken')
 /* POST Register. */
 
 router.post('/signup', [
+  check('name').isLength({ min: 3 }).isAlphanumeric(),
     // email must be an email
-    check('email').isEmail(),
+  check('email').isEmail(),
     // password must be at least 5 chars long
-    check('password').isLength({ min: 5 })
+  check('password').isLength({ min: 5 })
 
   ], (req, res) => {
     // Finds the validation errors in this request and wraps them in an object with handy functions
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(422).json({ errors: errors.array() });
+      return res.status(422).json({ errors: errors.array() })
     }
+    name= req.body.name
     email= req.body.email,
     password= req.body.password
     console.log(email, password)
     
-    const sql = `INSERT INTO candidat (email, password) VALUES ( ?,? )` ///////INSERT VALUE MYSQL//////
+    const sql = `INSERT INTO candidat (name, email, password) VALUES ( ?,?,? )` ///////INSERT VALUE MYSQL//////
     bcrypt.hash(password, 5,(err, bcryptedPassword) => {
 		// Store hash in your password DB
-		connection.query(sql,[ email, bcryptedPassword ]  , (err, result) => {
+		connection.query(sql,[ name, email, bcryptedPassword ]  , (err, result) => {
 			if (err) {
 				return res.status(500).json({
 					flash: err.message
@@ -45,18 +47,17 @@ router.post('/signup', [
 })
 
 /* POST login. */
-
 //check email and password must be at least 5 chars long
 router.post('/login', [ check('email').isEmail(), check('password').isLength({ min: 5 })], (req, res) => {
 
   const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(422).json({ errors: errors.array() });
+      return res.status(422).json({ errors: errors.array() });
     }
   //////check into database if password and mail match //////////////
   const password = req.body.password
 	const email = req.body.email
-	connection.query('SELECT * FROM candidat WHERE email = ?', [ email ], function(selectError, results, fields) {
+	connection.query('SELECT * FROM candidat WHERE email = ?', [ email ], function(selectError, results) {
 		if (selectError) {
 			// console.log("error ocurred",error);
 			res.send({
@@ -81,24 +82,15 @@ router.post('/login', [ check('email').isEmail(), check('password').isLength({ m
 					const myToken = jwt.sign(
 						{
 							email: results[0].email,
-							userID: results[0].id
+							idcandidat: results[0].idcandidat
 						},
-						process.env.SECRET_OR_KEY || console.error('missing SECRET_TOKEN_KEY env variable!'),
+						process.env.SECRET_OR_KEY || console.error('missing SECRET_OR_KEY env variable!'),
 						{
 							expiresIn: '6h'
 						}
           )
-          
-            // res.json(myToken)
-            // res.status(200).send({
-            // 	details: 'user connected'
-            // })
-
-					//////////////////////////
-
-					res.header('Access-Control-Expose-Headers', 'x-access-token')
-					res.set('x-access-token', myToken)
 					res.status(200).send({
+						token :'Bearer ' + myToken,
 						details: 'user connected'
 					})
 				}

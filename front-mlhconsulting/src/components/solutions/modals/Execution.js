@@ -28,8 +28,9 @@ class Execution extends Component {
                             <br></br>Par exigences
                             <br></br>Par sévérité
                             <br></br>Par campagne
+                            <br></br>Par scénarios
                         </p>
-                        <p>- Par scénarios</p>
+                    
                         <img src='./pictures/execution.png' alt='schema' />
 
                     </Collapse>

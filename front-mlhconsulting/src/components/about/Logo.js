@@ -1,105 +1,68 @@
 import React, { Component } from "react";
-// import { Carousel, CarouselInner, CarouselItem, Container, Row, Col, Card, CardImage, CardBody, CardTitle, CardText,Button } from "mdbreact";
+import {
+  Carousel, CarouselInner, CarouselItem, Container, MDBRow, Col} from "mdbreact";
 
-class Partenairs extends Component {
+class Partenair extends Component {
   render() {
     return (
-    <div></div>
-      // <Container>
-      //   <Carousel activeItem={1} length={3} slide={true} showControls={true} showIndicators={true} multiItem>
-      //     <CarouselInner>
-      //       <Row>
-              
-      //         <CarouselItem itemId="2">
-      //           <Col md="2">
-      //           <Card className="mb-2">
-      //             <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(60).jpg" />
-      //             <CardBody>
-      //               <CardTitle>Card title</CardTitle>
-      //               <CardText>
-      //                 Some quick example text to build on the card title and
-      //                 make up the bulk of the card's content.
-      //               </CardText>
-      //               <Button color="primary">Button</Button>
-      //             </CardBody>
-      //           </Card>
-      //           </Col>
-      //           <Col md="2" className="clearfix d-none d-md-block">
-      //           <Card className="mb-2">
-      //             <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(47).jpg" />
-      //             <CardBody>
-      //               <CardTitle>Card title</CardTitle>
-      //               <CardText>
-      //                 Some quick example text to build on the card title and
-      //                 make up the bulk of the card's content.
-      //               </CardText>
-      //               <Button color="primary">Button</Button>
-      //             </CardBody>
-      //           </Card>
-      //           </Col>
-      //           <Col md="2" className="clearfix d-none d-md-block">
-      //           <Card className="mb-2">
-      //             <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(48).jpg" />
-      //             <CardBody>
-      //               <CardTitle>Card title</CardTitle>
-      //               <CardText>
-      //                 Some quick example text to build on the card title and
-      //                 make up the bulk of the card's content.
-      //               </CardText>
-      //               <Button color="primary">Button</Button>
-      //             </CardBody>
-      //           </Card>
-      //           </Col>
-      //         </CarouselItem>
-      //         <CarouselItem itemId="3">
-      //           <Col md="2">
-      //           <Card className="mb-2">
-      //             <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(53).jpg" />
-      //             <CardBody>
-      //               <CardTitle>Card title</CardTitle>
-      //               <CardText>
-      //                 Some quick example text to build on the card title and
-      //                 make up the bulk of the card's content.
-      //               </CardText>
-      //               <Button color="primary">Button</Button>
-      //             </CardBody>
-      //           </Card>
-      //           </Col>
-      //           <Col md="2" className="clearfix d-none d-md-block">
-      //           <Card className="mb-2">
-      //             <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(45).jpg" />
-      //             <CardBody>
-      //               <CardTitle>Card title</CardTitle>
-      //               <CardText>
-      //                 Some quick example text to build on the card title and
-      //                 make up the bulk of the card's content.
-      //               </CardText>
-      //               <Button color="primary">Button</Button>
-      //             </CardBody>
-      //           </Card>
-      //           </Col>
-      //           <Col md="2" className="clearfix d-none d-md-block">
-      //           <Card className="mb-2">
-      //             <CardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(41).jpg" />
-      //             <CardBody>
-      //               <CardTitle>Card title</CardTitle>
-      //               <CardText>
-      //                 Some quick example text to build on the card title and
-      //                 make up the bulk of the card's content.
-      //               </CardText>
-      //               <Button color="primary">Button</Button>
-      //             </CardBody>
-      //           </Card>
-      //           </Col>
-      //         </CarouselItem>
-      //       </Row>
-      //     </CarouselInner>
-      //   </Carousel>
-      // </Container>
-      )
-    }
+      <Container>
+        <div>
+          <Carousel activeItem={1} length={3} slide={true} showControls={true} showIndicators={true} multiItem>
+            <CarouselInner>
+              <CarouselItem itemId="1">
+                <MDBRow>
+                  <Col size="sm">
+                    <img className="img-fluid" src="./pictures/AG2R.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="/pictures/carrefour.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="./pictures/bnp.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="./pictures/sg.png" />
+                  </Col>
+                </MDBRow>
+              </CarouselItem>
+              <CarouselItem itemId="2">
+                <MDBRow>
+                  <Col size="sm">
+                    <img className="img-fluid" src="./pictures/malakoff.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="./pictures/axa.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="./pictures/mma.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="./pictures/gmf.png" />
+                  </Col>
+                </MDBRow>
+              </CarouselItem>
+              <CarouselItem itemId="3">
+                <MDBRow>
+                  <Col size="sm">
+                    <img className="img-fluid" src="./pictures/ratp.png" />
+                  </Col>
+                  <Col size="sm">
+                    <img className="img-fluid" src="./pictures/fedex.jpeg" />
+                  </Col>
+                  <Col size="sm">
+                    <img className="img-fluid" src="./pictures/CNP.png" />
+                  </Col>
+                  <Col size="sm" >
+                    <img className="img-fluid" src="./pictures/challenge.png" />
+                  </Col>
+                </MDBRow>
+              </CarouselItem>
+            </CarouselInner>
+          </Carousel>
+        </div>
+      </Container>
+    )
   }
+}
 
-
-
-export default Partenairs
+export default Partenair

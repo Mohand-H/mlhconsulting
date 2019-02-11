@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBRow, MDBCol, Input, Button, View, Mask, Fa } from 'mdbreact'
-import './Contact.css'
+import './contact.css'
 import axios from 'axios'
 
 class Contact extends Component {
@@ -47,20 +47,24 @@ class Contact extends Component {
         })
       })
 
-      .catch(err => {
-        console.log(err);
-        this.state({
-          loading: false
-        })
-      })
-  }
+  //     .catch(err => {
+  //       console.log(err);
+  //       this.state({
+  //         loading: false
+  //       })
+  //     })
+  // }
   // loadOrShowMsg(){
   //   if(this.state.loading){
-  //     return <p>Loading...</p>
+  //     return <p> Loading... </p>
   //   }else{
-  //     return<p>{this.state.message}<p>
+  //     return<p>{this.state.message}</p>
   //   }
-  // }
+//   .then(response  =>  this.setState({"flash":  response.flash}),
+//     err  =>  this.setState({"flash":  err.flash})
+// )
+   }
+  
   render() {
     return (
       <div className='#'>
@@ -72,9 +76,8 @@ class Contact extends Component {
                 <MDBRow around>
                   <MDBCol size='6'>
                     <form className='form-contact' onSubmit={this.onSubmit.bind(this)}>
-
+                      <h1>Contact</h1>
                       <div className='grey-text'>
-                        <p className='h1 text-center mb-4'>Contact</p>
                         <Input
                           name='name'
                           label='Votre nom'
@@ -118,6 +121,7 @@ class Contact extends Component {
                       <div className='text-center'>
                         <Button outline gradient='blue' type='submit' value='Reset'>Envoyer<Fa icon='paper-plane-o' className='Envoyer' /></Button>
                       </div>
+                      
                     </form>
                     {/* {this.loadOrShowMsg()} */}
                   </MDBCol>
