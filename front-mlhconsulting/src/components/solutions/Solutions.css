@@ -1,0 +1,15 @@
+/* .img-fluid{
+    max-width: 100%; 
+    height: auto;
+} */
+
+.btn.btn-block {
+    margin: inherit;
+    margin-bottom: 20px;
+}
+.btn{
+
+    border-radius: 8px;
+    
+    }
+    
