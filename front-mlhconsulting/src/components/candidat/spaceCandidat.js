@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput, MDBFileInput, MDBtn} from 'mdbreact'
+import { MDBContainer, MDBRow, MDBBtn, MDBInput} from 'mdbreact'
 import axios from 'axios'
 
 
@@ -63,7 +63,7 @@ class SpaceCandidate extends Component {
         }
       })
 
-
+      
 
   }
   render() {

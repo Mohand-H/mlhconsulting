@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const SendForm = require('./routes/contactUs/form.js')
+const SendForm = require('./routes/contact/form.js')
 const Auth = require('./routes/auth/login.js')
 const MySpace = require('./routes/candidat/nominee.js')
 const ShowProfiles = require('./routes/admin/admin.js')
@@ -15,8 +15,6 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
-
 /////////////////////Routing////////////////////
 app.use('/contact', SendForm)
 app.use('/auth', Auth)
@@ -25,7 +23,7 @@ app.use('/admin', ShowProfiles)
 
 
 /////////////////////Routes/////////////////////
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     res.send(`<h1>Projet Mlh Consulting</h1>`)
 })
 

@@ -1,10 +1,10 @@
 const dotenv= require('dotenv')
 dotenv.config()
 const express = require ('express')
-const router = express. Router()
+const router = express.Router()
 const connection = require('../../helpers/connect.js')
 const { check, validationResult } = require('express-validator/check')
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const jwt = require ('jsonwebtoken')
 
 
@@ -96,23 +96,8 @@ router.post('/login', [ check('email').isEmail(), check('password').isLength({ m
 				}
 			})
 		}
-	})
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-   
+	})    
 })
-
 
 module.exports = router 
 

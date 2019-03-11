@@ -11,14 +11,16 @@ class Contact extends Component {
       name: '',
       email: '',
       subject: '',
+      message:'',
       text: ''
     }
   }
-
+  
   change = event => {
     this.setState({ [event.target.name]: event.target.value })
+   
   }
-
+ 
   onSubmit = event => {
     event.preventDefault()
     // console.log(this.state)
@@ -26,10 +28,11 @@ class Contact extends Component {
     const email = this.state.email
     const subject = this.state.subject
     const text = this.state.message
-
-    this.setState({
-      loading: true
-    })
+    this.setState({ name:''})
+    this.setState({ email:''})
+    this.setState({ subject:''})
+    this.setState({ message:''})
+  
 
     const data = {
       name,
@@ -37,6 +40,9 @@ class Contact extends Component {
       subject,
       text
     }
+
+    
+
 
     axios.post('http://localhost:3001/contact/form', data)
       .then(response => {
@@ -47,24 +53,15 @@ class Contact extends Component {
         })
       })
 
-  //     .catch(err => {
-  //       console.log(err);
-  //       this.state({
-  //         loading: false
-  //       })
-  //     })
-  // }
-  // loadOrShowMsg(){
-  //   if(this.state.loading){
-  //     return <p> Loading... </p>
-  //   }else{
-  //     return<p>{this.state.message}</p>
-  //   }
-//   .then(response  =>  this.setState({"flash":  response.flash}),
-//     err  =>  this.setState({"flash":  err.flash})
-// )
-   }
-  
+      // .catch(err => {
+      //   console.log(err);
+      //   this.state({
+      //     loading: false
+      //   })
+      // })
+    
+  }
+
   render() {
     return (
       <div className='#'>
@@ -123,7 +120,7 @@ class Contact extends Component {
                       </div>
                       
                     </form>
-                    {/* {this.loadOrShowMsg()} */}
+                    
                   </MDBCol>
                 </MDBRow>
               </Mask>

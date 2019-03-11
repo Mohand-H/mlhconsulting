@@ -20,7 +20,7 @@ class Solutions extends Component {
         <MDBRow className='section-1'>
           <MDBCol size='12' sm='6'>
             <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
-              <img className='img-fluid' src='./pictures/nossolutios_batirvotrestrategie.jpg' alt='img-resposive' />
+              <img className='img-fluid' src='./pictures/nossolutions_batirvotrestrategie.jpg' alt='img-resposive' />
               <Mask overlay='white-slight' />
             </View>
           </MDBCol>

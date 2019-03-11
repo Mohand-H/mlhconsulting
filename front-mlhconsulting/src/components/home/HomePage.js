@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MDBRow, Button, MDBCol, Mask, View, Containerfluid } from 'mdbreact'
+import { MDBRow, Button, MDBCol, Mask, View } from 'mdbreact'
 import './home.css'
 
 
@@ -7,22 +7,22 @@ class HomePage extends Component {
   render() {
     return (
 
-     <div>
-         <MDBRow className='section-0'>
-         <MDBCol size='12' sm='' >
-        <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
-          <img className='img-fluid' src='./pictures/accueil.jpg' alt='img-responsive' />
-          
-          <Mask overlay='white-slight' />
-      
-          <Mask overlay='black-strong' style={{ flexDirection: 'column', height: '100vh' }} className='flex-center '>
-            <h1 className='white-text'>MLH Consulting</h1>
-            <p className='white-text'> Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
-            <h2 className='white-text'>Tests logiciels et qualité du SI</h2>
-            <Button href='./contact' gradient='blue' className='btn-contact'>Contactez-nous</Button>
-          </Mask>
-          </View>
-        </MDBCol>
+      <div>
+        <MDBRow className='section-0'>
+          <MDBCol size='12' sm='' >
+            <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
+              <img className='img-fluid' src='./pictures/accueil.jpg' alt='img-responsive' />
+
+              <Mask overlay='white-slight' />
+
+              <Mask overlay='black-strong' style={{ flexDirection: 'column', height: '120vh' }} className='flex-center '>
+                <h1 className='white-text'>MLH Consulting</h1>
+                <p className='white-text'> Société de conseil et réalisation, nous mettons l’IT au service de votre métier. Notre objectif : comprendre vos challenges pour vous accompagner au cœur des mutations technologiques.</p>
+                <h2 className='white-text'>Tests logiciels et qualité du SI</h2>
+               
+              </Mask>
+            </View>
+          </MDBCol>
         </MDBRow>
 
         <MDBRow className='section-1'>
@@ -81,9 +81,7 @@ class HomePage extends Component {
             </div>
           </MDBCol>
         </MDBRow>
-
-     </div>
-
+      </div>
     )
   }
 }
