@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBCol, MDBRow, } from 'mdbreact'
-import './FooterBar.css'
+import './footerBar.css'
 
 class FooterBar extends Component {
   render() {

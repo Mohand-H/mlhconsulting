@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import { Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse } from 'mdbreact'
-import './MenuBar.css'
+import './menuBar.css'
 
 class MenuBar extends Component {
   state = {

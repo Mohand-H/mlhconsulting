@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBRow, MDBCol, Input, Button, View, Mask, Fa } from 'mdbreact'
-import './Contact.css'
+import './contact.css'
 import axios from 'axios'
 
 class Contact extends Component {
@@ -11,14 +11,16 @@ class Contact extends Component {
       name: '',
       email: '',
       subject: '',
+      message:'',
       text: ''
     }
   }
-
+  
   change = event => {
     this.setState({ [event.target.name]: event.target.value })
+   
   }
-
+ 
   onSubmit = event => {
     event.preventDefault()
     // console.log(this.state)
@@ -26,10 +28,11 @@ class Contact extends Component {
     const email = this.state.email
     const subject = this.state.subject
     const text = this.state.message
-
-    this.setState({
-      loading: true
-    })
+    this.setState({ name:''})
+    this.setState({ email:''})
+    this.setState({ subject:''})
+    this.setState({ message:''})
+  
 
     const data = {
       name,
@@ -37,6 +40,9 @@ class Contact extends Component {
       subject,
       text
     }
+
+    
+
 
     axios.post('http://localhost:3001/contact/form', data)
       .then(response => {
@@ -47,20 +53,15 @@ class Contact extends Component {
         })
       })
 
-      .catch(err => {
-        console.log(err);
-        this.state({
-          loading: false
-        })
-      })
+      // .catch(err => {
+      //   console.log(err);
+      //   this.state({
+      //     loading: false
+      //   })
+      // })
+    
   }
-  // loadOrShowMsg(){
-  //   if(this.state.loading){
-  //     return <p>Loading...</p>
-  //   }else{
-  //     return<p>{this.state.message}<p>
-  //   }
-  // }
+
   render() {
     return (
       <div className='#'>
@@ -72,9 +73,8 @@ class Contact extends Component {
                 <MDBRow around>
                   <MDBCol size='6'>
                     <form className='form-contact' onSubmit={this.onSubmit.bind(this)}>
-
+                      <h1>Contact</h1>
                       <div className='grey-text'>
-                        <p className='h1 text-center mb-4'>Contact</p>
                         <Input
                           name='name'
                           label='Votre nom'
@@ -118,8 +118,9 @@ class Contact extends Component {
                       <div className='text-center'>
                         <Button outline gradient='blue' type='submit' value='Reset'>Envoyer<Fa icon='paper-plane-o' className='Envoyer' /></Button>
                       </div>
+                      
                     </form>
-                    {/* {this.loadOrShowMsg()} */}
+                    
                   </MDBCol>
                 </MDBRow>
               </Mask>

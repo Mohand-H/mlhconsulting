@@ -46,5 +46,4 @@ router.post('/form', (req, res) => {
     })
 })
 
-module.exports = router;
-
+module.exports = router

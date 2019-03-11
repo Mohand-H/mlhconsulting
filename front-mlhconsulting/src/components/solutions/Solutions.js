@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBRow, MDBCol, View, Mask } from 'mdbreact'
-import './Solutions.css'
+import './solutions.css'
 import LesExigences from './modals/lesExigences.js'
 import Grilles from './modals/grilles.js'
 import Cartographie from './modals/cartographie.js'
@@ -18,13 +18,13 @@ class Solutions extends Component {
     return (
       <div className='container-fluid'>
         <MDBRow className='section-1'>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
-              <img className='img-fluid' src='./pictures/nossolutios_batirvotrestrategie.jpg' alt='img-resposive' />
+              <img className='img-fluid' src='./pictures/nossolutions_batirvotrestrategie.jpg' alt='img-resposive' />
               <Mask overlay='white-slight' />
             </View>
           </MDBCol>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <h1>Bâtir votre stratégie</h1>
             <p align='justify'> Pour vos besoins de conseil en ingénierie de test, MLH Consulting vous propose de bénéficier de ses 20 ans d’expériences dans le métier de test logiciel, au travers des offres suivantes :</p>
             <ul>
@@ -38,7 +38,7 @@ class Solutions extends Component {
           </MDBCol>
         </MDBRow>
         <MDBRow className='section-2'>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <h1>Mettre en place un référentiel de teste</h1>
             <h3>Maîtriser les coûts et délais des phases de test et recette :</h3>
             <p>Optimiser la productivité des acteurs;</p>
@@ -56,7 +56,7 @@ class Solutions extends Component {
               <Mask overlay='white-slight' />
             </View>
           </MDBCol>
-          <MDBCol >
+          <MDBCol size='12' sm='6'>
             <LesExigences className='btn-modal' />
             <Grilles />
             <Cartographie />
@@ -69,13 +69,13 @@ class Solutions extends Component {
         </MDBRow>
 
         <MDBRow className='section-3'>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
-              <img className='img-fluid' src='./pictures/nossolutions_testervosapplications.png' alt='img-resposive' />
+              <img className='img-fluid' src='./pictures/nossolutions_testervosapplications.jpg' alt='img-resposive' />
               <Mask overlay='white-slight' />
             </View>
           </MDBCol>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <h1>Tester vos applications digitales</h1>
             <p className='text-justify'>Au cœur de la stratégie digitale des entreprises, les applications déployées dans le cloud, sur les terminaux mobiles, les objets connectés, et les applications de big data sont en très fort développement, généralement en mode agile (SCRUM, XP ou Développement Lean).</p>
             <p className='text-justify'>Assurer les tests de telles applications nécessite des compétences fonctionnelles M Business, des savoir-faire méthodologiques et technologies particulières.</p>
@@ -91,7 +91,7 @@ class Solutions extends Component {
         </MDBRow>
 
         <MDBRow className='section-4'>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <h1>Automatisation des tests</h1>
             <p className='text-justify'>Pour vos besoins en automatisation des tests, s’appuyant sur sa forte expérience dans ce domaine depuis 1995, MLH Consulting vous propose les offres suivantes :</p>
             <h3>TR2A® (Tierce Recette Applicative Automatisée)</h3>
@@ -99,7 +99,7 @@ class Solutions extends Component {
             <h3>TestAssist®Automatisation</h3>
             <p className='text-justify'>La mise à disposition des profils de consultants spécialisés en automatisation des test (Chef de projet, Ingénieur Automaticien, Technicien Automatisation…) pour renforcer les équipes clientes dans la prise en charge des activités d’automatisation des testsw</p>
           </MDBCol>
-          <MDBCol>
+          <MDBCol size='12' sm='6'>
             <View className='rounded z-depth-2 mb-lg-0 mb-4' hover waves>
               <img className='img-fluid' src='./pictures/nossolutions_automatisationdestests.png' alt='img-resposive' />
               <Mask overlay='white-slight' />
@@ -107,7 +107,6 @@ class Solutions extends Component {
           </MDBCol>
         </MDBRow>
       </div>
-
     )
   }
 }

@@ -1,11 +1,11 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const connection = require('./helpers/connect.js')
-const Auth = require('./routes/auth/Login.js')
-// const Register = require('./routes/auth/Signup.js')
-const ShowProfiles = require('./routes/admin/Admin.js')
-const SendForm = require('./routes/contactUs/Form.js')
+const SendForm = require('./routes/contact/form.js')
+const Auth = require('./routes/auth/login.js')
+const MySpace = require('./routes/candidat/nominee.js')
+const ShowProfiles = require('./routes/admin/admin.js')
+
 const app = express();
 
 const PORT = process.env.PORT || 3001
@@ -15,18 +15,15 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-
-
 /////////////////////Routing////////////////////
-
-app.use('/auth', Auth)
-// app.use('/auth', Register)
 app.use('/contact', SendForm)
+app.use('/auth', Auth)
+app.use('/espace', MySpace)
 app.use('/admin', ShowProfiles)
 
 
 /////////////////////Routes/////////////////////
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     res.send(`<h1>Projet Mlh Consulting</h1>`)
 })
 
